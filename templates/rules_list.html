@@ -1,11 +1,11 @@
 {% extends "base_page.html" %}
 
 {% block page-title %}
-Список иностранных слов
+Пройденные темы
 {% endblock %}
 
 {% block page-lead %}
-Здесь вы можете просмотреть уже изученные вами слова.
+Здесь вы можете повторить все пройденные вами правила.
 {% endblock %}
 
 {% block content %}
@@ -15,16 +15,16 @@
           <thead>
             <tr>
               <th scope="col" class="py-3">#</th>
-              <th scope="col" class="py-3">Слово</th>
-              <th scope="col" class="py-3">Перевод</th>
+              <th scope="col" class="py-3">Правило</th>
+              <th scope="col" class="py-3">Исключения</th>
             </tr>
           </thead>
           <tbody>
-            {% for cnt, term, definition in terms %}
+            {% for cnt, rule, exceptions in rules %}
             <tr>
                 <td class="py-3">{{ cnt }}</td>
-                <td class="py-3">{{ term }}</td>
-                <td class="py-3">{{ definition }}</td>
+                <td class="py-3">{{ rule }}</td>
+                <td class="py-3">{{ exceptions }}</td>
             </tr>
             {% endfor %}
           </tbody>
